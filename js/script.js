@@ -1,41 +1,38 @@
 "use strict";
 
-const modalSignup = document.querySelector('#modal-signup'),
-  modalSignin = document.querySelector('#modal-signin'),
-  closeSingup = document.querySelector('#close-singup'),
-  closeSingin = document.querySelector('#close-singin'),
-  buttonSignup = document.querySelector('#button-signup'),
-  buttonSignin = document.querySelector('#button-signin'),
-  modalSignupContent = document.querySelector('#modal-signup__content'),
-  modalSigninContent = document.querySelector('#modal-signin__content');
+const modalSignup = document.querySelector('#modalSignup'),
+  modalSignin = document.querySelector('#modalSignin'),
+  closeSingup = document.querySelector('#closeSingup'),
+  closeSingin = document.querySelector('#closeSingin'),
+  buttonSignup = document.querySelector('#buttonSignup'),
+  buttonSignin = document.querySelector('#buttonSignin'),
+  modalSignupContent = document.querySelector('#modalSignup__content'),
+  modalSigninContent = document.querySelector('#modalSignin__content');
 
 if (buttonSignup) {
   buttonSignup.addEventListener('click', () => {
-    modalSignup.style.zIndex = "1";
-    modalSignup.style.opacity = "1";
-    modalSignupContent.style.animation = "descent 0.4s linear forwards";
+    modalSignup.classList.toggle('hide');
+    modalSignupContent.classList.toggle('animate');
   });
 }
 
 if (buttonSignin) { 
   buttonSignin.addEventListener('click', () => {
-    modalSignin.style.zIndex = "1";
-    modalSignin.style.opacity = "1";
-    modalSigninContent.style.animation = "descent 0.4s linear forwards";
+    modalSignin.classList.toggle('hide');
+    modalSigninContent.classList.toggle('animate');
   });
 }
 
 
 closeSingup.addEventListener('click', () => {
-  modalSignup.style.zIndex = "-1";
-  modalSignup.style.opacity = "0";
-  modalSignupContent.style.animation = "climb 0.4s linear forwards";
+  modalSignup.classList.toggle('hide');
+  modalSignupContent.classList.toggle('animate');
 });
 
+
 closeSingin.addEventListener('click', () => {
-  modalSignin.style.zIndex = "-1";
-  modalSignin.style.opacity = "0";
-  modalSigninContent.style.animation = "climb 0.4s linear forwards";
+  modalSignin.classList.toggle('hide');
+  modalSigninContent.classList.toggle('animate');
 });
 
 
