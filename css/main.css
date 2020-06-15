@@ -1,0 +1,25 @@
+/* nullstyles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ================== */
+
+/* container */
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* header */
+.header {
+  background-color: #0E2F55;
+  padding: 20px 0;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+}
