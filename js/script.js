@@ -23,17 +23,20 @@ if (buttonSignin) {
   });
 }
 
+if (closeSingup) {
+    closeSingup.addEventListener('click', () => {
+    modalSignup.classList.toggle('hide');
+    modalSignupContent.classList.toggle('animate');
+  });
+}
 
-closeSingup.addEventListener('click', () => {
-  modalSignup.classList.toggle('hide');
-  modalSignupContent.classList.toggle('animate');
-});
+if (closeSingin) {
+    closeSingin.addEventListener('click', () => {
+    modalSignin.classList.toggle('hide');
+    modalSigninContent.classList.toggle('animate');
+  });
+}
 
-
-closeSingin.addEventListener('click', () => {
-  modalSignin.classList.toggle('hide');
-  modalSigninContent.classList.toggle('animate');
-});
 
 
 

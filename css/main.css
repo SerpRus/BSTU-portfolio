@@ -26,6 +26,12 @@ button {
   font-size: inherit;
   padding: 0;
   outline: none;
+  background-color: transparent;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 a {
@@ -51,6 +57,13 @@ a {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/PTS75F.eot');
+  src: local('☺'), url('../fonts/PTS75F.woff') format('woff'), url('../fonts/PTS75F.ttf') format('truetype'), url('../fonts/PTS75F.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
 
 /* ========================== */
 
@@ -82,6 +95,7 @@ body {
   margin: 0 auto;
 }
 
+/* button */
 .button {
   background-color: transparent;
   border: none;
@@ -92,6 +106,19 @@ body {
 
 .button:hover {
   color: #fff;
+}
+
+.button.button--blue {
+  padding: 10px 25px;
+  background-color: #0e2f55;
+  border-radius: 5px;
+  margin: 50px 0 0 0;
+  color: #fff;
+  transition: background-color 0.2s linear;
+}
+
+.button.button--blue:hover {
+  background-color: #286090;
 }
 
 /* header */
@@ -127,10 +154,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s linear;
+  font-family: 'PTSans', sans-serif;
 }
 
 .modalSign.hide {
+  background-color: rgba(255, 255, 255, 0);
   z-index: -1;
   opacity: 0;
 }
@@ -190,9 +220,79 @@ body {
 }
 
 .modalSign__title {
-  font-family: 'PTSans';
   font-size: 18px;
   color: #fff;
+}
+
+.modalSign__form {
+  padding: 15px;
+  font-size: 14px;
+  color: #333333;
+}
+
+
+.modalSign__form input {
+  margin: 8px 0 8px 0px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: border-color 0.2s linear;
+}
+
+.modalSign__form input:focus {
+  border: 1px solid #0e2f55;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+  outline: none;
+}
+
+.modalSign__item {
+  display: flex;
+  align-items: center;
+}
+
+.modalSign__item label {
+  display: block;
+  width: 140px;
+}
+
+.modalSign__item input {
+  display: block;
+  width: 400px;
+}
+
+/* portfolio */
+.portfolio {
+  font-family: 'PTSans', sans-serif;
+}
+
+.portfolio__content {
+  position: relative;
+  margin: 0 30px 0 300px;
+ 
+}
+
+.portfolio__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #de3e3e;
+  margin-top: 25px;
+  padding-bottom: 25px;
   
 }
 
+.portfolio__username {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.portfolio__addAchievement {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 700;
+  color: #333333;
+  border: solid 1px #0e2f55;
+  border-radius: 3px;
+  padding: 12px 15px;
+}

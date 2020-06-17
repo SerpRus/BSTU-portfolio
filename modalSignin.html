@@ -1,0 +1,19 @@
+<section id="modalSignin" class="modalSign hide">
+    <div id="modalSignin__content" class="modalSign__content">
+        <header class="modalSign__header">
+            <h2 class="modalSign__title">Авторизация</h2>
+            <span id="closeSingin" class="modalSign__close"></span>
+        </header>
+        <form action="php/signin.php" class="modalSign__form" method="POST">
+            <div class="modalSign__item">
+                <label for="emailSignin">Email:</label>
+                <input id="emailSignin" type="email" name="email">
+            </div>
+            <div class="modalSign__item">
+                <label for="passwordSignin">Пароль:</label>
+                <input id="passwordSignin" type="password" name="password">
+            </div>
+            <button class="modalSignup__button button button--blue" type="submit" name="doLogin">Войти</button>
+        </form>
+    </div>
+</section>

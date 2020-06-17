@@ -1,0 +1,32 @@
+<section id="modalSignup" class="modalSign hide">
+    <div id="modalSignup__content" class="modalSign__content">
+        <header class="modalSign__header">
+            <h2 class="modalSign__title">Регистрация</h2>
+            <span id="closeSingup" class="modalSign__close"></span>
+        </header>
+        <form action="php/signup.php" class="modalSign__form" method="POST">
+            <div class="modalSign__item">
+                <label for="fullname-signup">ФИО:</label>
+                <input id="fullname-signup" name="fullname" type="text">
+            </div>
+            <div class="modalSign__item">
+                <label for="login-signup">Логин:</label>
+                <input id="login-signup" name="login" type="text">
+            </div>
+
+            <div class="modalSign__item">
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" value="<?php echo @$data['email']; ?>">
+            </div>
+            <div class="modalSign__item">
+                <label for="password-signup">Пароль:</label>
+                <input id="password-signup" name="password" type="password">
+            </div>
+            <div class="modalSign__item">
+                <label for="password-replay-signup">Повторите Пароль:</label>
+                <input id="password-replay-signup" name="password-replay" type="password">
+            </div>
+            <button class="modalSignup__button button button--blue" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</section>
