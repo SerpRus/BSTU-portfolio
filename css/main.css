@@ -1,4 +1,7 @@
 /* nullstyles */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -295,4 +298,56 @@ body {
   border: solid 1px #0e2f55;
   border-radius: 3px;
   padding: 12px 15px;
+}
+
+/* modalAddAchievement */
+.modalAddAchievement {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 1;
+}
+
+.modalAddAchievement.hide {
+  background-color: rgba(255, 255, 255, 0);
+  z-index: -1;
+  opacity: 0;
+}
+
+.modalAddAchievement__content {
+  background-color: #fff;
+  width: 800px;
+  padding: 30px;
+  margin: 20px auto 0 auto;
+}
+
+.modalAddAchievement__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  padding-bottom: 10px;
+}
+
+.modalAddAchievement__table {
+  width: 100%;
+}
+
+.modalAddAchievement__form {
+  padding: 20px 0;
+  border-top: 1px solid #e0dfdf;
+}
+
+.modalAddAchievement__rowTitle {
+  width: 90px;
+  padding-right: 20px;
+}
+
+.modalAddAchievement__activity {
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  border-radius: 8px;
 }
