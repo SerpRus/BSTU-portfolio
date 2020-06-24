@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио</title>
+    <?php if (basename($_SERVER['SCRIPT_FILENAME']) == 'portfolio.php') { ?>
+        <title>Портфолио студента</title>
+    <?php } else { ?>
+        <title>ФГБОУ ВО Брянский государственный технический университет</title>
+    <?php } ?>
     <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/script.js" defer></script>
@@ -22,6 +26,13 @@
                 ?>
                     <div>
                         <a class="header__portfolioLink" href="portfolio.php">Портфорило студента</a>
+                    </div>
+                <?php
+                }
+                if (basename($_SERVER['SCRIPT_FILENAME']) == 'portfolio.php') {
+                ?>
+                    <div>
+                        <a class="header__portfolioLink" href="rating.php">Рейтинг студентов</a>
                     </div>
                 <?php
                 }

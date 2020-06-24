@@ -32,13 +32,21 @@ button {
   background-color: transparent;
 }
 
-input {
+input, textarea {
   font-family: inherit;
   font-size: inherit;
 }
 
 a {
   text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
 }
 
 /* ========================== */
@@ -150,6 +158,14 @@ body {
   display: flex;
 }
 
+/* white__page */
+.white__page {
+  position: relative;
+  z-index: 1;
+  /* width: 100%; */
+  height: 100vh;
+}
+
 /* modalSign */
 .modalSign {
   position: fixed;
@@ -160,6 +176,8 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   transition: background-color 0.3s linear;
   font-family: 'PTSans', sans-serif;
+  z-index: 1;
+  opacity: 1;
 }
 
 .modalSign.hide {
@@ -266,12 +284,13 @@ body {
 /* portfolio */
 .portfolio {
   font-family: 'PTSans', sans-serif;
+  margin-left: 400px;
+  width: 750px;
 }
 
 .portfolio__content {
   position: relative;
-  margin: 0 30px 0 300px;
- 
+  margin-bottom: 20px;
 }
 
 .portfolio__title {
@@ -310,6 +329,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
   opacity: 1;
+  color: #333;
 }
 
 .modalAddAchievement.hide {
@@ -319,26 +339,25 @@ body {
 }
 
 .modalAddAchievement__content {
+  position: relative; 
   background-color: #fff;
   width: 800px;
   padding: 30px;
   margin: 20px auto 0 auto;
+  z-index: -1;
 }
 
 .modalAddAchievement__title {
   font-size: 24px;
   font-weight: 700;
-  color: #333333;
+  
   padding-bottom: 10px;
 }
 
 .modalAddAchievement__table {
   width: 100%;
-}
-
-.modalAddAchievement__form {
-  padding: 20px 0;
   border-top: 1px solid #e0dfdf;
+  padding-top: 20px;
 }
 
 .modalAddAchievement__rowTitle {
@@ -346,8 +365,127 @@ body {
   padding-right: 20px;
 }
 
-.modalAddAchievement__activity {
+.select {
   width: 100%;
   padding: 10px 0 10px 10px;
   border-radius: 8px;
+  margin: 10px 0;
+}
+
+.modalAddAchievement__rowTitle {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.modalAddAchievement__textarea {
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  border-radius: 8px;
+  height: 100px;
+  margin: 10px 0;
+  resize: none;
+}
+
+.modalAddAchievement__data {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.modalAddAchievement__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modalAddAchievement__btn {
+  padding: 15px;
+  color: #0e2f55;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+}
+
+.modalAddAchievement__btn:hover {
+  color: #fff;
+  background-color: #0e2f55;
+}
+
+.modalAddAchievement__addFile {
+  display: none;
+}
+
+/* criterion */
+.criterion {
+  font-size: 14px;
+}
+
+.limiter {
+  max-height: 150px;
+  overflow: overlay;
+}
+
+.criterion__study,
+.criterion__social,
+.criterion__cultural,
+.criterion__sport,
+.criterion__course,
+.criterion__diplom {
+  display: none;
+}
+
+.tableRadio {
+  vertical-align: top;
+}
+
+.participant {
+  display: none;
+}
+
+.filename {
+  display: block;
+  text-align: center;
+  border: 1px dashed #e0dfdf;
+  font-weight: 700;
+  padding: 10px 0;
+  clip: auto;
+  margin-bottom: 20px;
+    
+}
+
+.fileUpload {
+  border-bottom: 1px solid #e0dfdf;
+}
+
+/* achievementList */
+.achievementList {
+  padding: 20px 0;
+  border-top: 1px solid #c5c7c9;
+}
+
+.achievementList__title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+.achievementList__table {
+  margin-bottom: 40px;
+}
+
+.achievementList__table tr {
+  border: 1px solid #c5c7c9;
+}
+
+.achievementList__table th {
+  text-align: left;
+  background-color: #0e3056;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 13px 10px;
+}
+
+.achievementList__table td {
+  padding: 10px;
 }
