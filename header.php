@@ -22,42 +22,42 @@
                     <a href="index.php"><img src="img/header/logo.svg" alt=""></a>
                 </div>
                 <?php
-                if (basename($_SERVER['SCRIPT_FILENAME']) != 'portfolio.php') {
+                    if (basename($_SERVER['SCRIPT_FILENAME']) != 'portfolio.php') {
                 ?>
-                    <div>
-                        <a class="header__portfolioLink" href="portfolio.php">Портфорило студента</a>
-                    </div>
+                <div>
+                    <a class="header__portfolioLink" href="portfolio.php">Портфорило студента</a>
+                </div>
                 <?php
-                }
-                if (basename($_SERVER['SCRIPT_FILENAME']) == 'portfolio.php') {
+                    }
+                    if (basename($_SERVER['SCRIPT_FILENAME']) == 'portfolio.php') {
                 ?>
-                    <div>
-                        <a class="header__portfolioLink" href="rating.php">Рейтинг студентов</a>
-                    </div>
+                <div>
+                    <a class="header__portfolioLink" href="rating.php">Рейтинг студентов</a>
+                </div>
                 <?php
-                }
-                if (empty($_SESSION['user'])) {
+                    }
+                    if (empty($_SESSION['user'])) {
                 ?>
-                    <nav class="header__menu">
-                        <ul class="header__list">
-                            <li><button id="buttonSignup" class="button">Регистрация</button></li>
-                            <li><button id="buttonSignin" class="button">Вход</button></li>
-                        </ul>
-                    </nav>
+                <nav class="header__menu">
+                    <ul class="header__list">
+                        <li><button id="buttonSignup" class="button">Регистрация</button></li>
+                        <li><button id="buttonSignin" class="button">Вход</button></li>
+                    </ul>
+                </nav>
                 <?php
-                } else {
+                    } else {
                 ?>
-                    <nav class="header__menu">
-                        <ul class="header__list">
-                            <li>
-                                <form action="php/logout.php" method="GET">
-                                    <button class="button">Выйти</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </nav>
+                <nav class="header__menu">
+                    <ul class="header__list">
+                        <li>
+                            <form action="php/logout.php" method="GET">
+                                <button class="button">Выйти</button>
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
                 <?php
-                }
+                    }
                 ?>
             </div>
         </div>

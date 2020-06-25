@@ -8,27 +8,44 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $res = $stmt->fetchAll();
 
-$userPoints = [];
+$points = [];
 
 for($i = 0; $i < count($res); $i++) {
-    // echo $res;
-    $userPoints[$res[$i]['user_id']] += $res[$i]['point'];
-    echo '<pre>';
-    print_r($userPoints);
-    echo '</pre>';
+    $points[$res[$i]['user_id']] += $res[$i]['point'];
 }
 
-echo '<pre>';
-print_r($res);
-echo '</pre>';
+$sql = "SELECT * FROM `users` ORDER BY `points` DESC";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$res = $stmt->fetchAll();
 ?>
 
 <section class="rating">
     <div class="container">
         <div class="rating content">
             <table class="rating__table">
-                
-                
+                <tr>
+                    <th class="rating__title">ФИО</th>
+                    <th class="rating__title">Рейтинг</th>
+                </tr>
+                <?php
+                    for ($i = 0; $i < count($res); $i++) {
+                ?>
+                <tr>
+                    <td>
+                        <?php
+                        echo $res[$i]['fullname'];
+                        ?>
+                    </td>
+                    <td class="rating__points">
+                        <?php
+                        echo $res[$i]['points'];
+                        ?>
+                    </td>
+                </tr>
+                <?php
+                    }
+                ?>
             </table>
         </div>
     </div>

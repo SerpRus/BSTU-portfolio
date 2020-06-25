@@ -116,8 +116,6 @@ if (modalAddAchievementActivity) {
     }
 
     modalAddAchievementData.value = year + '-' + month + '-' + date;  
-
-    
 }
 
 

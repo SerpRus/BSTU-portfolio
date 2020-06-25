@@ -16,13 +16,23 @@ if(empty($findId)) {
     $findId = 1;
 }
 
+$sql = "SELECT * FROM `users`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
 
+$res = $stmt->fetchAll();
+for($i = 0; $i < count($res); $i++) {
+    if($res[$i]['email'] == $email) {
+        echo 'Электронная почта занята';
+        die();
+    }
+}
 
 $sql = "INSERT INTO `users` (`id`, `fullname`, `login`, `email`, `password`) VALUES ('$findId', '$fullname', '$login', '$email', '$password')";
 
-
 if(empty($fullname) or empty($login) or empty($email) or empty($password) or empty($passwordReplay)) {
-    echo "Вы ввели неполную иноформацию";
+    echo 'Вы ввели неполную иноформацию';
+    die();
 }
 
 if($password === $passwordReplay) {
